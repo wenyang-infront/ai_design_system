@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/addon-docs/blocks';
+import { Button } from '../../components/Button/Button';
 
 <Meta title="Components/Button/Documentation" />
 
@@ -6,16 +7,58 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 Buttons trigger an action. Use a concise verb, choose one primary action per context, and use destructive intent only when the consequence is clear.
 
-## Variants and states
+## Button Anatomy
+
+The anatomy below shows the parts that make up a medium, filled button. Icons are optional and should reinforce the action rather than repeat the label.
+
+<div style={{ border: '1px solid #d9d9d9', borderRadius: '8px', margin: '24px 0', overflow: 'hidden' }}>
+	<div style={{ alignItems: 'center', background: '#f8f8f8', display: 'flex', justifyContent: 'center', minHeight: '180px', padding: '32px 24px' }}>
+		<div style={{ alignItems: 'center', display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+			<span style={{ alignItems: 'center', display: 'flex', gap: '8px' }}>
+				<span aria-hidden="true" style={{ alignItems: 'center', background: '#113555', borderRadius: '999px', color: '#ffffff', display: 'inline-flex', fontSize: '12px', fontWeight: 700, height: '24px', justifyContent: 'center', width: '24px' }}>3</span>
+				<span aria-hidden="true" style={{ color: '#113555', fontSize: '20px' }}>←</span>
+			</span>
+			<Button>
+				<span aria-hidden="true">+</span>
+				<span>Save changes</span>
+				<span aria-hidden="true">→</span>
+			</Button>
+			<span style={{ alignItems: 'center', display: 'flex', gap: '8px' }}>
+				<span aria-hidden="true" style={{ color: '#113555', fontSize: '20px' }}>→</span>
+				<span aria-hidden="true" style={{ alignItems: 'center', background: '#113555', borderRadius: '999px', color: '#ffffff', display: 'inline-flex', fontSize: '12px', fontWeight: 700, height: '24px', justifyContent: 'center', width: '24px' }}>4</span>
+			</span>
+		</div>
+	</div>
+	<div style={{ background: '#ffffff', borderTop: '1px solid #d9d9d9', padding: '16px 20px' }}>
+		<p style={{ margin: '0 0 8px' }}><strong>Visual anatomy example</strong></p>
+		<p style={{ margin: 0 }}>The central control is the button container (1), label (2), and optional icon positions (3 and 4). The focus ring (5), loading indicator (6), and disabled treatment (7) appear in their applicable states.</p>
+	</div>
+</div>
+
+1. **Container** - The button surface uses the variant background and border tokens, a `1px` border, `spacing.200` horizontal padding, and `radius.medium` (`8px`) corner radius. The container must remain large enough to provide a usable pointer target.
+2. **Label** - The visible action uses the `labelMedium` typography token (`600`, `14px`) and the appropriate content color, such as `color.text.onBrand` on a filled primary button. Use concise, action-oriented text.
+3. **Leading Icon (optional)** - Place an icon before the label when it clarifies the action. Keep it decorative with `aria-hidden="true"` when the label already communicates the action, and preserve the component's `spacing.100` (`8px`) gap.
+4. **Trailing Icon (optional)** - Place an icon after the label for actions such as opening a menu or navigating. The icon must not be the only accessible name unless the control is explicitly icon-only.
+5. **Focus Ring** - `:focus-visible` adds a `3px` `color.brand.primary.hover` outline with a `2px` offset. Keep it visible for keyboard users and do not rely on color alone to communicate focus.
+6. **Loading Indicator (when applicable)** - The spinner uses `currentColor`, is hidden from assistive technology, and is paired with `aria-busy="true"`. The button is disabled while loading, but its label remains visible so the action stays understandable.
+7. **Disabled State** - A disabled button uses the native `disabled` attribute, reduced opacity, and a not-allowed cursor. Do not use disabled state to hide validation or other essential feedback.
+
+## Variants
 
 The stories cover filled, outlined, text, disabled, loading, and focus-visible behavior. Loading preserves the action label while exposing busy state.
 
-Button anatomy is built from a size-specific height, horizontal padding, a medium corner radius, and the `labelMedium` typography token. These values define the button's proportions and keep its visual structure consistent across intents and variants.
+## Sizes
+
+Small, medium, and large sizes change the control height, horizontal padding, and label scale while preserving the same anatomy and interaction states.
+
+## States
+
+Button states include default, hover, pressed, focus-visible, loading, and disabled. Each state preserves the button's accessible name and communicates its status without relying on color alone.
 
 ## Accessibility
 
 Use a native button, provide an accessible label when the visible label is insufficient, and never disable a button to hide an error message.
 
-## Token dependencies
+## Design Tokens
 
 `color.brand.primary`, `color.text.onBrand`, `color.border.default`, `radius.medium`, and `spacing.200`.
