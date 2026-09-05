@@ -20,6 +20,11 @@ const meta = {
   },
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Button anatomy is built from a size-specific height, horizontal padding, a medium corner radius, and the `labelMedium` typography token. These values define the button\'s proportions and keep its visual structure consistent across intents and variants.',
+      },
+    },
   },
 } satisfies Meta<typeof Button>;
 
