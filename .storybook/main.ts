@@ -4,7 +4,7 @@ const config: StorybookConfig = {
   "stories": [
     "../components/DesignTokens/DesignTokens.stories.tsx",
     "../components/Button/Button.stories.tsx",
-    "../docs/**/*.mdx"
+    "../docs/Components/Button.mdx"
   ],
   "addons": [
     "@chromatic-com/storybook",

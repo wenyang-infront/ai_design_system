@@ -1,4 +1,0 @@
-import { useState, type ReactNode } from 'react';
-import '../shared/components.css';
-export interface Tab { id: string; label: string; content: ReactNode; }
-export function Tabs({ tabs, defaultTab }: { tabs: Tab[]; defaultTab?: string }) { const [active, setActive] = useState(defaultTab ?? tabs[0]?.id); const activeTab = tabs.find((tab) => tab.id === active) ?? tabs[0]; return <div className="ds-tabs"><div aria-label="Sections" className="ds-tabs__list" role="tablist">{tabs.map((tab) => <button aria-controls={`${tab.id}-panel`} aria-selected={tab.id === active} className="ds-tabs__tab" id={`${tab.id}-tab`} key={tab.id} onClick={() => setActive(tab.id)} role="tab" type="button">{tab.label}</button>)}</div>{activeTab && <div aria-labelledby={`${activeTab.id}-tab`} className="ds-tabs__panel" id={`${activeTab.id}-panel`} role="tabpanel">{activeTab.content}</div>}</div>; }
