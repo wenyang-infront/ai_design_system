@@ -1,0 +1,14 @@
+{
+  "tokenSetOrder": [
+    "global",
+    "Color Semantic/Light",
+    "Color Primitives/Default",
+    "Elevation/Light",
+    "Elevation/Dark",
+    "Grid/Default",
+    "Typography/Default",
+    "Spacing/Default",
+    "Radius/Default",
+    "Border/Default"
+  ]
+}
