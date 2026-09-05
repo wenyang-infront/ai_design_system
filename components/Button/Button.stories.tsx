@@ -9,7 +9,6 @@ const variants: ButtonVariant[] = ['filled', 'outlined', 'text'];
 const meta = {
   title: 'Components/Button',
   component: Button,
-  tags: ['autodocs'],
   args: {
     children: 'Button',
   },
