@@ -130,7 +130,7 @@ function ButtonAnatomy() {
 }
 
 const meta = {
-  title: 'Components/Button/Anatomy',
+  title: 'Components/Button',
   component: ButtonAnatomy,
   parameters: { layout: 'fullscreen' },
 } satisfies Meta<typeof ButtonAnatomy>;
@@ -138,4 +138,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Overview: Story = {};
+export const Anatomy: Story = {};
