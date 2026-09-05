@@ -9,7 +9,7 @@ const variants: ButtonVariant[] = ['filled', 'outlined', 'text'];
 const meta = {
   title: 'Components/Button',
   component: Button,
-  tags: ['ai-generated'],
+  tags: ['autodocs'],
   args: {
     children: 'Button',
   },

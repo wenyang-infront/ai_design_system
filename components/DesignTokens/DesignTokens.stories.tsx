@@ -246,6 +246,7 @@ function DesignTokens() {
 }
 
 const meta = {
+  title: 'Foundations/Overview',
   component: DesignTokens,
   parameters: { layout: 'fullscreen' },
   tags: ['ai-generated'],
